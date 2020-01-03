@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Soduko solver</title>
+    <title>Sudoku solver</title>
 
     <!-- <link rel="stylesheet" type="text/css" href="./css/sudoku.css"> -->
     <!--BOOTSTRAP CDN-->
@@ -41,7 +41,15 @@
             margin-left: 10px;
             margin-top: 5%;
         }
+        h2 {
+            text-align: center;
+            margin-top: 6%;
+        }
+        .author{
+            font-size: 17px;
+        }
     </style>
+    <h2>Sudoku Solver <span class = "author">Made with ♥ by Jack He</span> <a target = "_blank" class = "author" href = "https://github.com/ProjectsByJackHe/Sudoku-Solver">Github</a> <a target = "_blank" class = "author" href = "https://www.linkedin.com/in/jack-he-845587161/">LinkedIn</a></h2>
     <div id = "initialBoard">
         <input id = "1" type="number" maxlength="1" max = "9" min = "1">
         <input id = "2" type="number" maxlength="1" max = "9" min = "1">
@@ -135,6 +143,7 @@
         <br>
     </div>
     <button onclick="initiate()" class = "btn btn-primary">SOLVE</button>
+    <!-- <p>Made with ♥ by Jack He</p> -->
     <div id = "answerBoard">
         <p id = "row 1"></p>
         <p id = "row 2"></p>      
