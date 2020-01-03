@@ -17,7 +17,6 @@
         #initialBoard {
             float: left;
             margin-left: 20%;
-            background-color: grey;
             margin-top: 10%;
         }
 
@@ -30,8 +29,12 @@
             font-size: 20px;
         }
         input{
-            font-size: 20px;
-            margin:2px;
+            font-size: 17px;
+            margin-top: 3px;
+            margin-bottom: 3px;
+            margin-left: 1px;
+            margin-right: 1px;
+            border: 1px solid black;
         }
         button{
             font-size: 30px;
@@ -50,7 +53,6 @@
         <input id = "8" type="number" maxlength="1" max = "9" min = "1">
         <input id = "9" type="number" maxlength="1" max = "9" min = "1">
         <br>
-        <br>
         <input id = "10" type="number" maxlength="1" max = "9" min = "1">
         <input id = "11" type="number" maxlength="1" max = "9" min = "1">
         <input id = "12" type="number" maxlength="1" max = "9" min = "1">
@@ -60,7 +62,6 @@
         <input id = "16" type="number" maxlength="1" max = "9" min = "1">
         <input id = "17" type="number" maxlength="1" max = "9" min = "1">
         <input id = "18" type="number" maxlength="1" max = "9" min = "1">
-        <br>
         <br>
         <input id = "19" type="number" maxlength="1" max = "9" min = "1">
         <input id = "20" type="number" maxlength="1" max = "9" min = "1">
@@ -72,7 +73,6 @@
         <input id = "26" type="number" maxlength="1" max = "9" min = "1">
         <input id = "27" type="number" maxlength="1" max = "9" min = "1">
         <br>
-        <br>
         <input id = "28" type="number" maxlength="1" max = "9" min = "1">
         <input id = "29" type="number" maxlength="1" max = "9" min = "1">
         <input id = "30" type="number" maxlength="1" max = "9" min = "1">
@@ -82,7 +82,6 @@
         <input id = "34" type="number" maxlength="1" max = "9" min = "1">
         <input id = "35" type="number" maxlength="1" max = "9" min = "1">
         <input id = "36" type="number" maxlength="1" max = "9" min = "1">
-        <br>
         <br>
         <input id = "37" type="number" maxlength="1" max = "9" min = "1">
         <input id = "38" type="number" maxlength="1" max = "9" min = "1">
@@ -94,7 +93,6 @@
         <input id = "44" type="number" maxlength="1" max = "9" min = "1">
         <input id = "45" type="number" maxlength="1" max = "9" min = "1">
         <br>
-        <br>
         <input id = "46" type="number" maxlength="1" max = "9" min = "1">
         <input id = "47" type="number" maxlength="1" max = "9" min = "1">
         <input id = "48" type="number" maxlength="1" max = "9" min = "1">
@@ -104,7 +102,6 @@
         <input id = "52" type="number" maxlength="1" max = "9" min = "1">
         <input id = "53" type="number" maxlength="1" max = "9" min = "1">
         <input id = "54" type="number" maxlength="1" max = "9" min = "1">
-        <br>
         <br>
         <input id = "55" type="number" maxlength="1" max = "9" min = "1">
         <input id = "56" type="number" maxlength="1" max = "9" min = "1">
@@ -116,7 +113,6 @@
         <input id = "62" type="number" maxlength="1" max = "9" min = "1">
         <input id = "63" type="number" maxlength="1" max = "9" min = "1">
         <br>
-        <br>
         <input id = "64" type="number" maxlength="1" max = "9" min = "1">
         <input id = "65" type="number" maxlength="1" max = "9" min = "1">
         <input id = "66" type="number" maxlength="1" max = "9" min = "1">
@@ -127,7 +123,6 @@
         <input id = "71" type="number" maxlength="1" max = "9" min = "1">
         <input id = "72" type="number" maxlength="1" max = "9" min = "1">
         <br>
-        <br>
         <input id = "73" type="number" maxlength="1" max = "9" min = "1">
         <input id = "74" type="number" maxlength="1" max = "9" min = "1">
         <input id = "75" type="number" maxlength="1" max = "9" min = "1">
@@ -137,7 +132,6 @@
         <input id = "79" type="number" maxlength="1" max = "9" min = "1">
         <input id = "80" type="number" maxlength="1" max = "9" min = "1">
         <input id = "81" type="number" maxlength="1" max = "9" min = "1">
-        <br>
         <br>
     </div>
     <button onclick="initiate()" class = "btn btn-primary">SOLVE</button>
@@ -152,6 +146,13 @@
         <p id = "row 8"></p>  
         <p id = "row 9"></p>       
     </div>
+    <script>
+        // initially populating the answer output area
+        const placeHolder = " ? "
+        for (var i = 1; i <= 9; i++){
+            document.getElementById("row " + String(i)).innerHTML = placeHolder +  "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" +  placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" +  placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder
+        }
+    </script>
     <script src = "./js/sudoku.js"></script>
 </body>
 </html>
