@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--META TAGS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soduko solver</title>
+
+    <!-- <link rel="stylesheet" type="text/css" href="./css/sudoku.css"> -->
+    <!--BOOTSTRAP CDN-->
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        #initialBoard {
+            float: left;
+            margin-left: 20%;
+            background-color: grey;
+            margin-top: 10%;
+        }
+
+        #answerBoard {
+            margin-right: 20%;
+            float: right;
+            margin-top: 10%;
+        }
+        p{
+            font-size: 20px;
+        }
+        input{
+            font-size: 20px;
+            margin:2px;
+        }
+        button{
+            font-size: 30px;
+            margin-left: 10px;
+            margin-top: 5%;
+        }
+    </style>
+    <div id = "initialBoard">
+        <input id = "1" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "2" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "3" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "4" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "5" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "6" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "7" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "8" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "9" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <br>
+        <input id = "10" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "11" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "12" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "13" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "14" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "15" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "16" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "17" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "18" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <br>
+        <input id = "19" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "20" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "21" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "22" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "23" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "24" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "25" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "26" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "27" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <br>
+        <input id = "28" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "29" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "30" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "31" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "32" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "33" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "34" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "35" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "36" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <br>
+        <input id = "37" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "38" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "39" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "40" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "41" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "42" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "43" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "44" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "45" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <br>
+        <input id = "46" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "47" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "48" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "49" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "50" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "51" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "52" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "53" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "54" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <br>
+        <input id = "55" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "56" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "57" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "58" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "59" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "60" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "61" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "62" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "63" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <br>
+        <input id = "64" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "65" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "66" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "67" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "68" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "69" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "70" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "71" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "72" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <br>
+        <input id = "73" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "74" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "75" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "76" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "77" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "78" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "79" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "80" type="number" maxlength="1" max = "9" min = "1">
+        <input id = "81" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <br>
+    </div>
+    <button onclick="initiate()" class = "btn btn-primary">SOLVE</button>
+    <div id = "answerBoard">
+        <p id = "row 1"></p>
+        <p id = "row 2"></p>      
+        <p id = "row 3"></p>
+        <p id = "row 4"></p>  
+        <p id = "row 5"></p>
+        <p id = "row 6"></p>  
+        <p id = "row 7"></p>
+        <p id = "row 8"></p>  
+        <p id = "row 9"></p>       
+    </div>
+    <script src = "./js/sudoku.js"></script>
+</body>
+</html>
